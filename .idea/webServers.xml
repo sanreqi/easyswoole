@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ceff7e68-81ab-4c8f-a4a0-49459217a9cf" name="47.96.13.172" url="http://47.96.13.172">
+        <fileTransfer host="47.96.13.172" port="22" rootFolder="/data/wwwroot/default/easyswoole/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
