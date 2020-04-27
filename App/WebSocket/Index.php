@@ -17,12 +17,12 @@ class Index extends Controller {
     }
 
     public function who(){
-
+        $fd = $this->caller()->getClient()->getFd();
         $server = ServerManager::getInstance()->getSwooleServer();
-        $server->push(3, 'push in http at ' . date('H:i:s'));
+        $server->push($fd, 'push in http at ' . date('H:i:s').'good');
 
-        print_r($this->caller()->getArgs());
-        $this->response()->setMessage('your fd is ' . $this->caller()->getClient()->getFd());
+//        print_r($this->caller()->getArgs());
+//        $this->response()->setMessage('your fd is ' . $this->caller()->getClient()->getFd());
     }
 
     public function delay(){
@@ -63,7 +63,7 @@ class Index extends Controller {
         $server = ServerManager::getInstance()->getSwooleServer();
         $server->push($gfd, $msg);
 
-        $this->response()->setMessage('发送成功');
+//        $this->response()->setMessage('发送成功');
 
     }
 
@@ -85,6 +85,54 @@ class Index extends Controller {
         $server->push($ufd, $msg);
 
 
-        $this->response()->setMessage('your fd is ');
+//        $this->response()->setMessage('your fd is ');
+    }
+
+    public function adminConnect() {
+        echo 'admin connect---------';
+        //后台连接，gid和fd关系
+        $fd = $this->caller()->getClient()->getFd();
+        $args = $this->caller()->getArgs();
+        $gid = $args['gid'];
+        print_r($args);
+        echo  "\n";
+        $this->response()->setMessage('your fd is ' . $fd);
+        $fdManager =  FdManager::getInstance();
+        $fdManager->setAdminFd($gid, $fd);
+        $this->response()->setMessage('gid '. $gid . ', fd '. $fd);
+    }
+
+    public function userSend() {
+        echo 'usersend-----------';
+        //设置uid-fd,设置ufd-gfd,分配客服
+        $fd = $this->caller()->getClient()->getFd();
+        $args = $this->caller()->getArgs();
+        $uid = $args['uid'];
+        $gid = $args['gid'];
+        $msg = $args['msg'];
+        $fdManager =  FdManager::getInstance();
+        print_r('uid:'.$uid.',gid:'.$gid.',userfd:'.$fd);
+        echo  "\n";
+        $fdManager->setUserFd($uid, $fd);
+        //管理员fd
+        $gfd = $fdManager->getFdByGid($gid);
+        $fdManager->setUfdGfdByUidGid($uid, $gid);
+        $server = ServerManager::getInstance()->getSwooleServer();
+        $server->push($gfd, $msg);
+    }
+
+    public function adminSend() {
+        echo 'admin send--------------';
+        $fd = $this->caller()->getClient()->getFd();
+        $args = $this->caller()->getArgs();
+        $uid = $args['uid'];
+        $gid = $args['gid'];
+        $msg = $args['msg'];
+        $fdManager =  FdManager::getInstance();
+        $ufd = $fdManager->getFdByUid($uid);
+        print_r('uid:'.$uid.',gid:'.$gid.',userfd:'.$ufd);
+        echo  "\n";
+        $server = ServerManager::getInstance()->getSwooleServer();
+        $server->push($ufd, $msg);
     }
 }

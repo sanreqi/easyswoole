@@ -20,8 +20,8 @@ class FdManager extends BaseLogic
     //redis键名，hash
     private $keyGidFd = 'esw_gid_fd'; //redis键名 hash类型，管理后台用户gid对应fd
     private $keyUidFd = 'esw_uid_fd'; //redis键名 hash类型，前台用户uid对应fd
-    private $keyUfdGfd = 'esw_ufd_gfd'; //redis键名 hash类型，前台用户uid对应管理后台用户gid
-    private $keyFdList = 'esw_online_fd_list'; //redis键名 集合类型，在线fd
+    private $keyFdUid = 'esw_fd_uid'; //redis键名 hash类型，fd对应uid
+    private $keyUidGid = 'esw_uid_gid'; //redis键名 hash类型，前台用户uid对应管理后台用户gid
     private $redis; //EasySwoole\Redis\Redis类
 
     public function __construct(){
@@ -58,6 +58,7 @@ class FdManager extends BaseLogic
 
     public function setUserFd($uid, $fd) {
         $this->setClientFd(self::CLIENT_TYPE_USER, $uid, $fd);
+        $this->redis->hSet($this->keyFdUid, $fd, $uid);
     }
 
     public function getFdByGid($gid) {
@@ -68,16 +69,20 @@ class FdManager extends BaseLogic
         return $this->getFdByCid(self::CLIENT_TYPE_USER, $uid);
     }
 
+    public function getUidByFd($fd) {
+        return $this->redis->hGet($this->keyFdUid, $fd);
+    }
+
     /**
      * @param $clientType 客户端类型 1-前台用户 2-管理后台用户
      * @param $cid $clientType=1时为uid，$clientType=2时为gid
      */
     private function getFdKeyByType($clientType) {
         if (!in_array($clientType, [self::CLIENT_TYPE_USER, self::CLIENT_TYPE_ADMIN])) {
-            throw new Exception('客户端类型错误');
+            return false;
         }
 
-        if ($clientType == CLIENT_TYPE_USER) {
+        if ($clientType == self::CLIENT_TYPE_USER) {
             $key = $this->keyUidFd;
         } else {
             $key = $this->keyGidFd;
@@ -85,16 +90,30 @@ class FdManager extends BaseLogic
         return $key;
     }
 
-    public function setUfdGfdByUidGid($uid, $gid) {
-        $ufd = $this->getFdByUid($uid);
-        $gfd = $this->getFdByGid($gid);
-        $this->redis->hSet($this->keyUfdGfd, $ufd, $gfd);
+    public function setUidGid($uid, $gid) {
+        $this->redis->hSet($this->keyUidGid, $uid, $gid);
     }
 
+    public function getGidByUid($uid) {
+        return $this->redis->hGet($this->keyUidGid, $uid);
+    }
+
+    /**
+     * 通过前台用户fd获取客服fd
+     * @param $fd
+     * @return bool|string
+     */
     public function getGfdByUfd($ufd) {
-        return $this->redis->hget($this->keyUfdGfd, $ufd);
+        $uid = $this->getUidByFd($ufd);
+        if (empty($uid)) {
+            return '';
+        }
+        $gid = $this->getGidByUid($uid);
+        if (empty($gid)) {
+            return '';
+        }
+
+        return $this->getFdByGid($gid);
     }
-
-
 
 }

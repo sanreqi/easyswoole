@@ -18,6 +18,12 @@ if(file_exists(EASYSWOOLE_ROOT.'/bootstrap.php')){
     require_once EASYSWOOLE_ROOT.'/bootstrap.php';
 }
 
+
+if(file_exists(EASYSWOOLE_ROOT.'/App/Common/helper.php')){
+    require_once EASYSWOOLE_ROOT.'/App/Common/helper.php';
+}
+
+
 $args = $argv;
 //trim first command
 array_shift($args);

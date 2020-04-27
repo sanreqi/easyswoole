@@ -14,10 +14,5 @@ use EasySwoole\Redis\Config\RedisConfig;
 
 class BaseLogic{
 
-//    protected $redis;
-//
-//    public function __construct(){
-//        $config = Config::getInstance()->getConf('REDIS');
-//        $this->redis = new Redis(new RedisConfig($config));
-//    }
+
 }
