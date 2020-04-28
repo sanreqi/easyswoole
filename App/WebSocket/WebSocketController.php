@@ -25,7 +25,7 @@ class WebSocketController extends Controller {
     protected function successSetMessage($data = []) {
         $responseData['errorCode'] = ErrorCode::ERRORCODE_NORMAL;
         $responseData['errorMsg'] = 'success';
-        if (is_array($data)) {
+        if (is_array($data) && !empty($data)) {
             $responseData = array_merge($responseData, $data);
         }
 

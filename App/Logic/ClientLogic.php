@@ -26,24 +26,33 @@ class ClientLogic{
         FdManager::getInstance()->setAdminFd($gid, $fd);
     }
 
-    public function userSend($ufd, $msgType, $msg, $uid) {
+    public function userSend($uid, $ufd, $msgType, $msg) {
         $fdManager = FdManager::getInstance();
-        //查用户有没有对应fd
-        $ufd = $fdManager->getUidByFd($ufd);
-        if (empty($ufd)) {
-            if (!empty($uid)) {
-
-            } else {
-                throw new LogicException(ErrorCode::ERRORCODE_USER_OFFLINE);
-            }
+        //@todo srq 改成 hsetnx
+        //设置用户fd
+        $fdManager->setUserFd($uid, $ufd);
+        //查找客服fd
+        $gid = $fdManager->getGidByUid($uid);
+        $gfd = $fdManager->getFdByGid($gid);
+        if (empty($gid) || empty($gfd)) {
+            throw new LogicException(ErrorCode::ERRORCODE_ADMIN_OFFLINE);
         }
 
-//        $gfd = $fdManager->getGfdByUfd($ufd);
-//        if (empty($gfd)) {
-//            logic_exception(ErrorCode::ERRORCODE_ADMIN_OFFLINE);
-//        }
-//
-//        $server = ServerManager::getInstance()->getSwooleServer();
-//        $server->push($gfd, $msg);
+        //@todo srq
+        $server = ServerManager::getInstance()->getSwooleServer();
+        $server->push($gfd, $msg);
     }
+
+    public function adminSend($uid, $msgType, $msg) {
+        $fdManager = FdManager::getInstance();
+        $ufd = $fdManager->getFdByUid($uid);
+        if (empty($ufd)) {
+            throw new LogicException(ErrorCode::ERRORCODE_USER_OFFLINE);
+        }
+
+        //@todo srq
+        $server = ServerManager::getInstance()->getSwooleServer();
+        $server->push($ufd, $msg);
+    }
+
 }

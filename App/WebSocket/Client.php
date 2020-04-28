@@ -35,24 +35,26 @@ class Client extends WebSocketController{
         $clientLogic = new ClientLogic();
         $clientLogic->adminBind($gid, $fd);
 
-        $this->successSetMessage('');
+        $this->successSetMessage();
     }
 
     /**
      * 前台用户发送消息
      */
     public function userSend() {
+        $ufd = $this->caller()->getClient()->getFd();
+        echo $ufd;
+
         $args = $this->caller()->getArgs();
-        if (false === $this->checkParams($args, ['msg','msgType'])) {
+        if (false === $this->checkParams($args, ['uid', 'msg', 'msgType'])) {
             return;
         }
         //uid只有第一次建立连接需要传
-        $uid = isset($args['uid']) ? $args['uid'] : 0;
         $ufd = $this->caller()->getClient()->getFd();
 
         $clientLogic = new ClientLogic();
         try {
-            $clientLogic->userSend($ufd, $args['msgType'], $args['msg'], $uid);
+            $clientLogic->userSend($args['uid'], $ufd, $args['msgType'], $args['msg']);
         } catch(LogicException $e) {
             $this->exceptionSetMessage($e);
         }

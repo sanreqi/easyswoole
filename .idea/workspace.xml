@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="640c1360-29cd-49d5-92ac-60cedc64c960" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Common/Constants.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Common/ErrorCode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Common/LogicException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Common/helper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Logic/ClientLogic.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Logic/MessageManager.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/WebSocket/Client.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/WebSocket/WebSocketController.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/App/Logic/MessageSendLogic.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Logic/BaseLogic.php" afterPath="$PROJECT_DIR$/App/Logic/BaseLogic.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Logic/FdManager.php" afterPath="$PROJECT_DIR$/App/Logic/FdManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/WebSocket/Index.php" afterPath="$PROJECT_DIR$/App/WebSocket/Index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/easyswoole" afterPath="$PROJECT_DIR$/easyswoole" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Logic/ClientLogic.php" afterPath="$PROJECT_DIR$/App/Logic/ClientLogic.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/WebSocket/Client.php" afterPath="$PROJECT_DIR$/App/WebSocket/Client.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/WebSocket/WebSocketController.php" afterPath="$PROJECT_DIR$/App/WebSocket/WebSocketController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/App/WebSocket/WebSocketParser.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
-              <caret line="40" column="31" lean-forward="true" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+              <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
               <folding>
                 <element signature="e#32#88#0#PHP" expanded="true" />
               </folding>
@@ -41,11 +30,21 @@
       <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/WebSocket/Client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-65">
-              <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="37" column="27" lean-forward="false" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
               <folding>
                 <element signature="e#111#136#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebSocketController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/WebSocket/WebSocketController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,33 +59,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Common/Constants.php">
+      <file leaf-file-name="FdManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Logic/FdManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseLogic.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Logic/BaseLogic.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="267">
+              <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
               <folding>
-                <element signature="e#109#142#0#PHP" expanded="true" />
+                <element signature="e#31#66#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogicException.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LogicException.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/Common/LogicException.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            <state relative-caret-position="322">
+              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -105,8 +94,8 @@
       <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/WebSocket/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-257">
-              <caret line="88" column="5" lean-forward="true" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+            <state relative-caret-position="19">
+              <caret line="88" column="5" lean-forward="false" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
               <folding>
                 <element signature="e#33#57#0#PHP" expanded="true" />
               </folding>
@@ -118,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/App/Logic/MessageManager.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+              <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
               <folding>
                 <element signature="e#108#143#0#PHP" expanded="true" />
               </folding>
@@ -126,14 +115,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientLogic.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClientLogic.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Logic/ClientLogic.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="36" column="59" lean-forward="false" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
-              <folding>
-                <element signature="e#109#134#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="184">
+              <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,8 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>create</find>
-      <find>SERVER_NAME</find>
       <find>produce</find>
       <find>dev.php</find>
       <find>Config._php</find>
@@ -164,13 +149,15 @@
       <find>n push</find>
       <find>write</find>
       <find>content</find>
-      <find>push</find>
       <find>socketexception</find>
       <find>constants</find>
       <find>fd</find>
       <find>consta</find>
       <find>打开连接</find>
       <find>ufd</find>
+      <find>push</find>
+      <find>errormsg</find>
+      <find>adminBind</find>
       <find>Constants</find>
     </findStrings>
   </component>
@@ -202,9 +189,9 @@
         <option value="$PROJECT_DIR$/App/Logic/MessageManager.php" />
         <option value="$PROJECT_DIR$/App/Common/ErrorCode.php" />
         <option value="$PROJECT_DIR$/App/Logic/BaseLogic.php" />
-        <option value="$PROJECT_DIR$/App/WebSocket/WebSocketController.php" />
-        <option value="$PROJECT_DIR$/App/WebSocket/Client.php" />
         <option value="$PROJECT_DIR$/App/Logic/ClientLogic.php" />
+        <option value="$PROJECT_DIR$/App/WebSocket/Client.php" />
+        <option value="$PROJECT_DIR$/App/WebSocket/WebSocketController.php" />
       </list>
     </option>
   </component>
@@ -317,12 +304,12 @@
       <workItem from="1587548608825" duration="3211000" />
       <workItem from="1587622058985" duration="9273000" />
       <workItem from="1587693037856" duration="20633000" />
-      <workItem from="1587865636577" duration="31657000" />
+      <workItem from="1587865636577" duration="39803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64774000" />
+    <option name="totallyTimeSpent" value="72920000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -651,32 +638,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Logic/FdManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-387">
-          <caret line="71" column="20" lean-forward="false" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
-          <folding>
-            <element signature="e#31#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/WebSocket/WebSocketController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="61" column="35" lean-forward="true" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
-          <folding>
-            <element signature="e#112#137#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Logic/BaseLogic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#109#142#0#PHP" expanded="true" />
+            <element signature="e#109#142#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -697,50 +664,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Common/LogicException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/WebSocket/WebSocketParser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
-          <caret line="40" column="31" lean-forward="true" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+          <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
           <folding>
             <element signature="e#32#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/WebSocket/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-257">
-          <caret line="88" column="5" lean-forward="true" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-          <folding>
-            <element signature="e#33#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/WebSocket/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65">
-          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <element signature="e#111#136#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Logic/MessageManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding>
-            <element signature="e#108#143#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -753,13 +682,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/App/Logic/FdManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+          <folding>
+            <element signature="e#31#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/WebSocket/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="37" column="27" lean-forward="false" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+          <folding>
+            <element signature="e#111#136#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/WebSocket/WebSocketController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/WebSocket/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="88" column="5" lean-forward="false" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+          <folding>
+            <element signature="e#33#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Logic/MessageManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding>
+            <element signature="e#108#143#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/App/Logic/ClientLogic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="36" column="59" lean-forward="false" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
-          <folding>
-            <element signature="e#109#134#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="184">
+          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Common/LogicException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
